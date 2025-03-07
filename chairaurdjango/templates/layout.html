@@ -6,22 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'styles.css' %}" />
     {% tailwind_css %}
-    <title>{% block title %} Default_name {% endblock %}</title>
+    <title>{% block title %} Chai-Wala {% endblock %}</title>
   </head>
   <body class="min-h-screen flex flex-col bg-amber-50">
-    <header
-      class="fixed w-full bg-gradient-to-r from-amber-800 to-amber-700 shadow-lg z-50"
-    >
+    <header class="fixed w-full bg-gradient-to-r from-amber-800 to-amber-700 shadow-lg z-50">
       <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <nav class="flex items-center justify-between h-16 lg:h-20">
           <div class="flex-shrink-0">
-            <a href="/" title="ChaiWala" class="flex items-center space-x-2">
-              <img
-                class="w-12 h-12"
-                src="{% static 'images/tea-logo.png' %}"
-                alt="ChaiWala Logo"
-              />
-              <span class="text-2xl font-bold text-amber-100">ChaiWala</span>
+            <a href="/" title="Chai-Wala" class="flex items-center space-x-2">
+              <img class="w-12 h-12 rounded-full" src="{% static 'images/tea-logo.jpg' %}" alt="Chai-Wala Logo">
+              <span class="text-2xl font-bold text-amber-100">Chai-Wala</span>
             </a>
           </div>
 
@@ -47,13 +41,13 @@
 
           <!-- Desktop menu -->
           <div class="hidden lg:flex lg:items-center lg:space-x-8">
-            <a href="#" class="text-amber-100 hover:text-amber-200 font-medium"
+            <a href="{% url 'About' %}" class="text-amber-100 hover:text-amber-200 font-medium"
               >Our Story</a
             >
-            <a href="#" class="text-amber-100 hover:text-amber-200 font-medium"
+            <a href="{% url 'menu' %}" class="text-amber-100 hover:text-amber-200 font-medium"
               >Tea Menu</a
             >
-            <a href="#" class="text-amber-100 hover:text-amber-200 font-medium"
+            <a href="{% url 'Locations' %}" class="text-amber-100 hover:text-amber-200 font-medium"
               >Locations</a
             >
             <a href="#" class="text-amber-100 hover:text-amber-200 font-medium"
@@ -63,10 +57,10 @@
 
           <div class="hidden lg:flex lg:items-center lg:space-x-4">
             <a
-              href="#"
+              href="{% url 'review' %}"
               class="px-4 py-2 text-amber-800 bg-amber-100 rounded-full hover:bg-amber-200 transition-colors duration-300"
             >
-              Order Now
+              Rate Us
             </a>
           </div>
         </nav>
@@ -103,6 +97,12 @@
             <div class="flex items-center px-4">
               <a
                 href="#"
+            </a>
+          </div>
+          <div class="pt-4 pb-3 border-t border-gray-200">
+            <div class="flex items-center px-4">
+              <a
+                href="#"
                 class="w-full px-4 py-2 text-base font-medium text-center text-white bg-blue-600 rounded-md hover:bg-blue-700"
               >
                 Get Started
@@ -125,7 +125,7 @@
       <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div class="col-span-1 md:col-span-2">
-            <h3 class="text-2xl font-bold mb-4">ChaiWala</h3>
+            <h3 class="text-2xl font-bold mb-4">Chai-Wala</h3>
             <p class="text-amber-200">
               Serving authentic Indian chai since 1990. Every cup tells a story
               of tradition, quality, and the warmth of Indian hospitality.
@@ -164,7 +164,7 @@
         <div
           class="mt-8 pt-8 border-t border-amber-800 text-center text-amber-200"
         >
-          © {% now "Y" %} ChaiWala. Brewing Happiness Daily.
+          © {% now "Y" %} Chai-Wala. Brewing Happiness Daily.
         </div>
       </div>
     </footer>
