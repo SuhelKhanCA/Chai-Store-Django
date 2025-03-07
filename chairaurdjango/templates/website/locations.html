@@ -1,0 +1,62 @@
+{% extends 'layout.html' %} {% block title %}Locations - Chai-Wala{% endblock %}
+{% block content %}
+<div class="container mx-auto px-4 py-12">
+  <h1 class="text-4xl font-bold text-amber-900 text-center mb-8">
+    Our Locations
+  </h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div
+      class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105"
+    >
+      <div class="p-6">
+        <h3 class="text-2xl font-bold text-amber-800 mb-4">Main Branch</h3>
+        <div class="text-amber-700 space-y-2 mb-4">
+          <p>123 Tea Street</p>
+          <p>Mumbai Central, MH 12345</p>
+          <p>Phone: (555) 123-4567</p>
+          <p>Email: main@chaiwala.com</p>
+        </div>
+        <h5 class="text-xl font-semibold text-amber-800 mb-2">Hours:</h5>
+        <div class="text-amber-700 space-y-1">
+          <p>Monday - Friday: 9:00 AM - 8:00 PM</p>
+          <p>Saturday: 10:00 AM - 6:00 PM</p>
+          <p>Sunday: 11:00 AM - 5:00 PM</p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105"
+    >
+      <div class="p-6">
+        <h3 class="text-2xl font-bold text-amber-800 mb-4">Downtown Branch</h3>
+        <div class="text-amber-700 space-y-2 mb-4">
+          <p>456 Center Avenue</p>
+          <p>Mumbai City, MH 12346</p>
+          <p>Phone: (555) 987-6543</p>
+          <p>Email: downtown@chaiwala.com</p>
+        </div>
+        <h5 class="text-xl font-semibold text-amber-800 mb-2">Hours:</h5>
+        <div class="text-amber-700 space-y-1">
+          <p>Monday - Friday: 10:00 AM - 7:00 PM</p>
+          <p>Saturday: 10:00 AM - 6:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-12">
+    <div
+      class="bg-gradient-to-r from-amber-800 to-amber-700 rounded-lg shadow-lg p-8 text-center"
+    >
+      <h3 class="text-2xl font-bold text-amber-100 mb-4">Visit Us</h3>
+      <p class="text-amber-200">
+        We welcome you to visit any of our locations. Our friendly staff will be
+        happy to serve you the perfect cup of authentic Indian chai.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

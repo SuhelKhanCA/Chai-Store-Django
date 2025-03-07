@@ -1,5 +1,4 @@
-{% extends 'layout.html' %} {% load static %} {% block title %}ChaiWala -
-Authentic Indian Tea House{% endblock %} {% block content %}
+{% extends 'layout.html' %} {% load static %} {% block title %}Chai-Wala - Indian Tea House{% endblock %} {% block content %}
 <!-- Hero Section -->
 <div class="relative h-screen">
   <div
@@ -37,7 +36,7 @@ Authentic Indian Tea House{% endblock %} {% block content %}
       <!-- Masala Chai Card -->
       <div class="bg-white rounded-lg shadow-lg overflow-hidden">
         <img
-          src="{% static 'images/masala-chai.jpg' %}"
+          src="{% static 'images/chai1.jpg' %}"
           alt="Masala Chai"
           class="w-full h-48 object-cover"
         />
@@ -55,7 +54,7 @@ Authentic Indian Tea House{% endblock %} {% block content %}
       <!-- Elaichi Chai Card -->
       <div class="bg-white rounded-lg shadow-lg overflow-hidden">
         <img
-          src="{% static 'images/elaichi-chai.jpg' %}"
+          src="{% static 'images/chai2.jpg' %}"
           alt="Elaichi Chai"
           class="w-full h-48 object-cover"
         />
@@ -71,7 +70,7 @@ Authentic Indian Tea House{% endblock %} {% block content %}
       <!-- Adrak Chai Card -->
       <div class="bg-white rounded-lg shadow-lg overflow-hidden">
         <img
-          src="{% static 'images/adrak-chai.jpg' %}"
+          src="{% static 'images/chai3.jpg' %}"
           alt="Adrak Chai"
           class="w-full h-48 object-cover"
         />
@@ -81,6 +80,29 @@ Authentic Indian Tea House{% endblock %} {% block content %}
           <p class="text-amber-900 font-bold mt-4">₹35</p>
         </div>
       </div>
+      {% for chai in chais %}
+      <div
+        class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+      >
+        <div class="relative h-48">
+          <img
+            src="{{ chai.image.url }}"
+            alt="{{ chai.name }}"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-amber-900 mb-2">{{ chai.name }}</h3>
+          <p class="text-amber-700 mb-4">{{ chai.description }}</p>
+          <a
+            href="{% url 'chai_detail' chai.id %}"
+            class="inline-block px-4 py-2 bg-amber-800 text-amber-100 rounded-full hover:bg-amber-700 transition-colors duration-300"
+          >
+            View Details
+          </a>
+        </div>
+      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -92,7 +114,7 @@ Authentic Indian Tea House{% endblock %} {% block content %}
       <div>
         <h2 class="text-3xl font-bold text-amber-900 mb-6">Our Story</h2>
         <p class="text-amber-800 mb-4">
-          Started from a small stall in Mumbai, ChaiWala has grown into India's
+          Started from a small stall in Mumbai, Chai-Wala has grown into India's
           most loved chai brand. Our secret? We stick to traditional recipes
           while ensuring consistent quality across all our outlets.
         </p>
@@ -130,6 +152,19 @@ Authentic Indian Tea House{% endblock %} {% block content %}
         <p class="font-medium text-amber-900">- Priya Sharma</p>
       </div>
       <!-- Add more testimonials similarly -->
+      
+      {% for review in reviews %}
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="flex items-center mb-4">
+          <div class="text-amber-500">★★★★★</div>
+        </div>
+        <p class="text-amber-800 mb-4">
+          {{review.review_text}}
+        </p>
+        <p class="font-medium text-amber-900">- {{review.author}}</p>
+      </div>
+      {% endfor %}
+        
     </div>
   </div>
 </section>

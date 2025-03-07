@@ -1,0 +1,42 @@
+{% extends 'layout.html' %} {% load static %} {% block title %}Chai-Wala - Indian Tea House{% endblock %} {% block content %}
+<div class="min-h-screen bg-amber-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold text-brown-900 text-center mb-8">Our Chai Story</h1>
+        
+        <div class="prose prose-lg mx-auto space-y-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-brown-800 mb-4">The Origins</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Founded in 1990, Chai-Wala began as a humble street-side tea stall with a vision to serve the perfect cup of chai. Our journey started when our founder, inspired by the rich tradition of Indian tea culture, decided to bring authentic chai experiences to modern tea lovers.
+                </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-brown-800 mb-4">The Art of Brewing</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    We source our tea leaves from the finest estates in Assam and Darjeeling. Each cup is crafted with precision, following age-old recipes that have been passed down through generations. Our signature masala chai blend combines premium black tea with hand-ground spices.
+                </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-brown-800 mb-4">Growing Together</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    From a single stall to multiple locations, our growth has been fueled by the love and support of our loyal customers. We've maintained our commitment to quality while expanding our menu to include innovative chai variations and traditional Indian snacks.
+                </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-brown-800 mb-4">Our Promise</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Today, Chai-Wala stands as a testament to the timeless appeal of authentic Indian chai. We continue to serve each cup with the same passion and dedication that marked our beginnings, ensuring that every visitor experiences the warmth and comfort of true Indian hospitality.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <img src="{% static 'images/chai-making.jpg' %}" alt="Chai Making Process" class="rounded-lg shadow-xl mx-auto max-w-2xl">
+            <p class="mt-4 text-gray-600 italic">Our traditional chai-making process</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
