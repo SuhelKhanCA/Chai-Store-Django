@@ -1,71 +1,172 @@
-{% load static tailwind_tags %}
-{% load static %}
+{% load static tailwind_tags %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
     {% tailwind_css %}
     <title>{% block title %} Default_name {% endblock %}</title>
   </head>
-  <body class="min-h-screen flex flex-col">
-    <header class="pb-6 bg-white lg:pb-0">
+  <body class="min-h-screen flex flex-col bg-amber-50">
+    <header
+      class="fixed w-full bg-gradient-to-r from-amber-800 to-amber-700 shadow-lg z-50"
+    >
       <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <!-- lg+ -->
-          <nav class="flex items-center justify-between h-16 lg:h-20">
-              <div class="flex-shrink-0">
-                  <a href="#" title="" class="flex">
-                      <img class="w-auto h-8 lg:h-10" src="https://cdn.rareblocks.xyz/collection/celebration/images/logo.svg" alt="" />
-                  </a>
-              </div>
-  
-              <button type="button" class="inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100">
-                  <!-- Menu open: "hidden", Menu closed: "block" -->
-                  <svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
-                  </svg>
-  
-                  <!-- Menu open: "block", Menu closed: "hidden" -->
-                  <svg class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-              </button>
-  
-              <div class="hidden lg:flex lg:items-center lg:ml-auto lg:space-x-10">
-                  <a href="#" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Features </a>
-  
-                  <a href="#" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Solutions </a>
-  
-                  <a href="#" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Resources </a>
-  
-                  <a href="#" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Pricing </a>
-              </div>
-  
-              <a href="#" title="" class="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md lg:inline-flex hover:bg-blue-700 focus:bg-blue-700" role="button"> Get started now </a>
-          </nav>
-  
-          <!-- xs to lg -->
-          <nav class="pt-4 pb-6 bg-white border border-gray-200 rounded-md shadow-md lg:hidden">
-              <div class="flow-root">
-                  <div class="flex flex-col px-6 -my-2 space-y-1">
-                      <a href="#" title="" class="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Features </a>
-  
-                      <a href="#" title="" class="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Stores </a>
-  
-                      <a href="#" title="" class="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Resources </a>
-  
-                      <a href="#" title="" class="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Pricing </a>
-                  </div>
-              </div>
-  
-              <div class="px-6 mt-6">
-                  <a href="#" title="" class="inline-flex justify-center px-4 py-3 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md tems-center hover:bg-blue-700 focus:bg-blue-700" role="button"> Order Soon ! </a>
-              </div>
-          </nav>
+        <nav class="flex items-center justify-between h-16 lg:h-20">
+          <div class="flex-shrink-0">
+            <a href="/" title="ChaiWala" class="flex items-center space-x-2">
+              <img
+                class="w-12 h-12"
+                src="{% static 'images/tea-logo.png' %}"
+                alt="ChaiWala Logo"
+              />
+              <span class="text-2xl font-bold text-amber-100">ChaiWala</span>
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button
+            type="button"
+            class="inline-flex items-center justify-center p-2 text-amber-100 lg:hidden hover:text-amber-200"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Desktop menu -->
+          <div class="hidden lg:flex lg:items-center lg:space-x-8">
+            <a href="#" class="text-amber-100 hover:text-amber-200 font-medium"
+              >Our Story</a
+            >
+            <a href="#" class="text-amber-100 hover:text-amber-200 font-medium"
+              >Tea Menu</a
+            >
+            <a href="#" class="text-amber-100 hover:text-amber-200 font-medium"
+              >Locations</a
+            >
+            <a href="#" class="text-amber-100 hover:text-amber-200 font-medium"
+              >Franchise</a
+            >
+          </div>
+
+          <div class="hidden lg:flex lg:items-center lg:space-x-4">
+            <a
+              href="#"
+              class="px-4 py-2 text-amber-800 bg-amber-100 rounded-full hover:bg-amber-200 transition-colors duration-300"
+            >
+              Order Now
+            </a>
+          </div>
+        </nav>
+
+        <!-- Mobile menu -->
+        <div class="lg:hidden" id="mobile-menu" x-show="open">
+          <div class="pt-2 pb-4 space-y-1">
+            <a
+              href="#"
+              class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+            >
+              Home
+            </a>
+            <a
+              href="#"
+              class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+            >
+              Products
+            </a>
+            <a
+              href="#"
+              class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+            >
+              About Us
+            </a>
+            <a
+              href="#"
+              class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+            >
+              Contact
+            </a>
+          </div>
+          <div class="pt-4 pb-3 border-t border-gray-200">
+            <div class="flex items-center px-4">
+              <a
+                href="#"
+                class="w-full px-4 py-2 text-base font-medium text-center text-white bg-blue-600 rounded-md hover:bg-blue-700"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-  </header>
-  
-    {% block content %}{% endblock %}
+    </header>
+
+    <!-- Main content with warm, inviting background -->
+    <main class="flex-grow mt-16 lg:mt-20">
+      <div class="bg-gradient-to-b from-amber-50 to-amber-100">
+        {% block content %}{% endblock %}
+      </div>
+    </main>
+
+    <!-- Footer with warm colors -->
+    <footer class="bg-amber-900 text-amber-100">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="col-span-1 md:col-span-2">
+            <h3 class="text-2xl font-bold mb-4">ChaiWala</h3>
+            <p class="text-amber-200">
+              Serving authentic Indian chai since 1990. Every cup tells a story
+              of tradition, quality, and the warmth of Indian hospitality.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Visit Us</h3>
+            <ul class="space-y-2 text-amber-200">
+              <li>Mumbai Central</li>
+              <li>Delhi Heights</li>
+              <li>Bangalore City</li>
+              <li>Kolkata Square</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Connect</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-amber-200 hover:text-amber-100"
+                  >Instagram</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-amber-200 hover:text-amber-100"
+                  >Facebook</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-amber-200 hover:text-amber-100"
+                  >Twitter</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-8 pt-8 border-t border-amber-800 text-center text-amber-200"
+        >
+          © {% now "Y" %} ChaiWala. Brewing Happiness Daily.
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

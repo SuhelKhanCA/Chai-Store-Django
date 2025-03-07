@@ -1,28 +1,136 @@
-{% extends 'layout.html' %}
-
-{% block title %}Home Page{% endblock %}
-
-{% block content %} 
-<h1 class="bg-red-500 text-3xl text-center">Chai aur code| Home page</h1> 
-<div class="flex justify-center items-center">
-    <div class="container mx-auto px-4">
-        <p class="text-center bg-orange-400" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, iure! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum ducimus mollitia sapiente adipisci quisquam fugiat? Unde quis sit soluta animi doloribus assumenda accusantium atque non minus nam illo culpa beatae mollitia omnis deleniti quos ipsa odio corporis, eum autem eligendi molestias sequi quam fugiat. Eaque, unde! Perferendis iste dolorem quibusdam aut, eveniet vel accusantium expedita veniam? At eius facere porro placeat tenetur consequatur quos, reprehenderit tempora nostrum dolorum voluptates quo ad architecto molestias, obcaecati atque debitis suscipit maiores. Esse blanditiis incidunt, ea sit amet doloribus dolorem debitis ducimus a neque accusamus iusto harum, unde, ipsum dolores repudiandae quas! Saepe quibusdam vero natus cum consectetur eveniet enim sapiente dolores recusandae, fugit omnis harum. Molestiae fuga porro maiores distinctio ipsa soluta animi dolores, obcaecati, officia asperiores cumque! Sint ratione quae architecto adipisci, itaque non totam ad aut sit et, porro enim impedit dolores eaque est quas mollitia sapiente, deserunt odio dignissimos. Voluptates autem aliquam perspiciatis eaque? Aspernatur illo consectetur minima asperiores.</p>
+{% extends 'layout.html' %} {% load static %} {% block title %}ChaiWala -
+Authentic Indian Tea House{% endblock %} {% block content %}
+<!-- Hero Section -->
+<div class="relative h-screen">
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('{% static 'images/hero-chai.jpg' %}')"
+  >
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  </div>
+  <div
+    class="relative flex items-center justify-center h-full text-center px-4"
+  >
+    <div class="max-w-3xl">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+        Experience the Magic of Traditional Indian Chai
+      </h1>
+      <p class="text-xl text-amber-100 mb-8">
+        Brewing happiness one cup at a time since 1990
+      </p>
+      <a
+        href="#menu"
+        class="inline-block px-8 py-3 bg-amber-600 text-white rounded-full hover:bg-amber-700 transition-colors duration-300"
+        >View Our Menu</a
+      >
     </div>
+  </div>
 </div>
 
-<section>
-    <main>
-        <h1 class="text-center">This is main content! This footer works</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui amet saepe libero oluta sequi aliquam asperiores eos aliquid consequuntur fugiat blanditiis saepe pariatur velit dolore impedit itaque, exercitationem quae nisi quia veniam fuga distinctio nostrum. Commodi, pariatur. Laudantium quo animi vitae laboriosam tempore possimus assumenda soluta, numquam eveniet nostrum minima expedita nemo culpa modi pariatur eius optio corporis doloribus ipsam alias quas. Nemo vel exercitationem maxime. Exercitationem numquam, quod accusamus officia maxime, quam nesciunt sequi recusandae, expedita perspiciatis suscipit animi dolorum amet et facilis minus ex! Quo fuga maiores sint soluta natus et ullam dolorum! Enim dolorem reprehenderit deserunt a aperiam, quod facere doloremque laborum quaerat at, possimus similique rerum. Harum quae quo, delectus architecto dolore omnis facilis neque. Itaque nisi laudantium veniam repudiandae nam at ex deserunt corrupti cupiditate, quis laboriosam sed esse modi temporibus quisquam distinctio corporis vel vitae numquam voluptates natus expedita, quos error? Nostrum ab itaque impedit! Minus, vel aut. Facere aut ipsam doloremque nostrum eos cumque dolore vitae ipsum, dignissimos cum alias. Ipsa similique sed officia, non optio omnis, sit quos minima quia rem ex maiores, voluptas vel atque quo ipsam aliquid consequuntur rerum. At!</p>
-    </main>
+<!-- Featured Teas Section -->
+<section id="menu" class="py-20 bg-amber-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-amber-900 mb-12">
+      Our Signature Brews
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Masala Chai Card -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img
+          src="{% static 'images/masala-chai.jpg' %}"
+          alt="Masala Chai"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-amber-900 mb-2">
+            Classic Masala Chai
+          </h3>
+          <p class="text-amber-700">
+            Our signature blend with aromatic Indian spices
+          </p>
+          <p class="text-amber-900 font-bold mt-4">₹30</p>
+        </div>
+      </div>
+
+      <!-- Elaichi Chai Card -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img
+          src="{% static 'images/elaichi-chai.jpg' %}"
+          alt="Elaichi Chai"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-amber-900 mb-2">Elaichi Chai</h3>
+          <p class="text-amber-700">
+            Cardamom-infused tea for a royal experience
+          </p>
+          <p class="text-amber-900 font-bold mt-4">₹35</p>
+        </div>
+      </div>
+
+      <!-- Adrak Chai Card -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <img
+          src="{% static 'images/adrak-chai.jpg' %}"
+          alt="Adrak Chai"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-amber-900 mb-2">Adrak Chai</h3>
+          <p class="text-amber-700">Ginger-spiced tea for cold weather</p>
+          <p class="text-amber-900 font-bold mt-4">₹35</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer class="flex flex-col bg-blue-600 mt-auto">
-    <div>
-        <h2 class="text-center">This is Footer</h2>
+<!-- About Section -->
+<section class="py-20 bg-amber-100">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-bold text-amber-900 mb-6">Our Story</h2>
+        <p class="text-amber-800 mb-4">
+          Started from a small stall in Mumbai, ChaiWala has grown into India's
+          most loved chai brand. Our secret? We stick to traditional recipes
+          while ensuring consistent quality across all our outlets.
+        </p>
+        <p class="text-amber-800">
+          Every cup of chai we serve carries the warmth of Indian hospitality
+          and the richness of our culture.
+        </p>
+      </div>
+      <div class="relative h-96">
+        <img
+          src="{% static 'images/chai-making.jpg' %}"
+          alt="Chai Making Process"
+          class="absolute inset-0 w-full h-full object-cover rounded-lg shadow-xl"
+        />
+      </div>
     </div>
-    <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eius nihil rem reiciendis tenetur nam provident quia sapiente eveniet et, officia omnis quam asperiores, sequi eum consequatur officiis magni. Nisi quo velit maiores, ea quae doloremque odio dolorem eum sapiente doloribus sint alias cum debitis, id non quidem excepturi mollitia.</p>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-20 bg-amber-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-amber-900 mb-12">
+      What Our Customers Say
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="flex items-center mb-4">
+          <div class="text-amber-500">★★★★★</div>
+        </div>
+        <p class="text-amber-800 mb-4">
+          "Best chai I've ever had! Reminds me of the chai my grandmother used
+          to make."
+        </p>
+        <p class="font-medium text-amber-900">- Priya Sharma</p>
+      </div>
+      <!-- Add more testimonials similarly -->
     </div>
-</footer>
+  </div>
+</section>
 {% endblock %}
