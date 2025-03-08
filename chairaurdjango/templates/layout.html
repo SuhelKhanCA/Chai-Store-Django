@@ -9,12 +9,18 @@
     <title>{% block title %} Chai-Wala {% endblock %}</title>
   </head>
   <body class="min-h-screen flex flex-col bg-amber-50">
-    <header class="fixed w-full bg-gradient-to-r from-amber-800 to-amber-700 shadow-lg z-50">
+    <header
+      class="fixed w-full bg-gradient-to-r from-amber-800 to-amber-700 shadow-lg z-50"
+    >
       <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <nav class="flex items-center justify-between h-16 lg:h-20">
           <div class="flex-shrink-0">
             <a href="/" title="Chai-Wala" class="flex items-center space-x-2">
-              <img class="w-12 h-12 rounded-full" src="{% static 'images/tea-logo.jpg' %}" alt="Chai-Wala Logo">
+              <img
+                class="w-12 h-12 rounded-full"
+                src="{% static 'images/tea-logo.jpg' %}"
+                alt="Chai-Wala Logo"
+              />
               <span class="text-2xl font-bold text-amber-100">Chai-Wala</span>
             </a>
           </div>
@@ -23,6 +29,7 @@
           <button
             type="button"
             class="inline-flex items-center justify-center p-2 text-amber-100 lg:hidden hover:text-amber-200"
+            onclick="toggleMobileMenu()"
           >
             <svg
               class="w-6 h-6"
@@ -41,13 +48,19 @@
 
           <!-- Desktop menu -->
           <div class="hidden lg:flex lg:items-center lg:space-x-8">
-            <a href="{% url 'About' %}" class="text-amber-100 hover:text-amber-200 font-medium"
+            <a
+              href="{% url 'About' %}"
+              class="text-amber-100 hover:text-amber-200 font-medium"
               >Our Story</a
             >
-            <a href="{% url 'menu' %}" class="text-amber-100 hover:text-amber-200 font-medium"
+            <a
+              href="{% url 'menu' %}"
+              class="text-amber-100 hover:text-amber-200 font-medium"
               >Tea Menu</a
             >
-            <a href="{% url 'Locations' %}" class="text-amber-100 hover:text-amber-200 font-medium"
+            <a
+              href="{% url 'Locations' %}"
+              class="text-amber-100 hover:text-amber-200 font-medium"
               >Locations</a
             >
           </div>
@@ -63,48 +76,32 @@
         </nav>
 
         <!-- Mobile menu -->
-        <div class="lg:hidden" id="mobile-menu" x-show="open">
+        <div class="lg:hidden" id="mobile-menu" class="hidden">
           <div class="pt-2 pb-4 space-y-1">
             <a
-              href="#"
+              href="{% url 'About' %}"
               class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-blue-600"
             >
-              Home
+              Our Story
             </a>
             <a
-              href="#"
+              href="{% url 'menu' %}"
               class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-blue-600"
             >
-              Products
+              Tea Menu
             </a>
             <a
-              href="#"
+              href="{% url 'Locations' %}"
               class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-blue-600"
             >
-              About Us
+              Locations
             </a>
             <a
-              href="#"
+              href="{% url 'review' %}"
               class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-blue-600"
             >
-              Contact
+              Rate Us
             </a>
-          </div>
-          <div class="pt-4 pb-3 border-t border-gray-200">
-            <div class="flex items-center px-4">
-              <a
-                href="#"
-            </a>
-          </div>
-          <div class="pt-4 pb-3 border-t border-gray-200">
-            <div class="flex items-center px-4">
-              <a
-                href="#"
-                class="w-full px-4 py-2 text-base font-medium text-center text-white bg-blue-600 rounded-md hover:bg-blue-700"
-              >
-                Get Started
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -165,5 +162,12 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      }
+    </script>
   </body>
 </html>
